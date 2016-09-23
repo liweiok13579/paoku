@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/game2.js"></script>
+    <script src="js/hitPix.js"></script>
+    <script>
+    window.onload=function(){
+        var canvas=document.querySelector("canvas");
+        var cobj=canvas.getContext("2d");
+        var runImg=document.querySelectorAll(".run");
+        var jumpImg=document.querySelector(".jump");
+        var hinderImg=document.querySelectorAll(".hinder");
+        window.onresize=function(){
+                canvas.width=document.documentElement.clientWidth;
+                canvas.height=document.documentElement.clientHeight;
+            }
+        window.onresize();
+        var gameObj=new game(canvas,cobj,runImg,jumpImg,hinderImg);
+            gameObj.play();
+        }
+    </script>
+</head>
+<style>
+    html,body{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height:100%;
+        overflow: hidden;
+    }
+    canvas{
+        background: url(imgs/bk.jpg) repeat-x ;
+        background-size: 100% 100%;
+    }
+    img{
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+<canvas width="500" height="500">
+    您的浏览器不支持canvas，请升级浏览器
+</canvas>
+<img src="imgs/2run1.png" alt="" class="run" hidden>
+<img src="imgs/2run2.png" alt="" class="run" hidden>
+<img src="imgs/2run3.png" alt="" class="run" hidden>
+<img src="imgs/2run4.png" alt="" class="run" hidden>
+<img src="imgs/2run5.png" alt="" class="run" hidden>
+<img src="imgs/2jump.png" alt="" class="jump" hidden>
+<img src="imgs/1.png" alt="" class="hinder" hidden>
+<img src="imgs/2.png" alt="" class="hinder" hidden>
+<img src="imgs/3.png" alt="" class="hinder" hidden>
+<img src="imgs/4.png" alt="" class="hinder" hidden>
+<img src="imgs/5.png" alt="" class="hinder" hidden>
+ 
+</body>
+</html>
